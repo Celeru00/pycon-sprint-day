@@ -61,7 +61,7 @@ class GameSession:
         elif self.state is GameState.GAME_OVER:
             if self.lives > 0:
                 self.state = GameState.PLAYING
-                self._reset_level(reset_lives=False)
+                self._reset_level(reset_lives=True)
             else:
                 self._return_to_menu()
         elif self.state is GameState.LEVEL_COMPLETE:
