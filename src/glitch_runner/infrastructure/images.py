@@ -31,7 +31,7 @@ def load_player_sprites() -> SpriteSet:
         frames = _load_sheet(filename)
         if frames:
             sprites[f"{animation}_right"] = frames
-            sprites[f"{animation}_left"] = frames
+            sprites[f"{animation}_left"] = [_flip(frame) for frame in frames]
         else:
             sprites[f"{animation}_right"] = placeholders[f"{animation}_right"]
             sprites[f"{animation}_left"] = placeholders[f"{animation}_left"]
