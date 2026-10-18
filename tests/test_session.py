@@ -49,6 +49,17 @@ def test_touching_enemy_costs_a_life_then_respawns(session, clock, audio):
     assert session.lives == LEVELS[0].lives - 1
 
 
+def test_confirming_game_over_respawns_without_restoring_life(session):
+    start(session)
+    session.lives = LEVELS[0].lives
+    session._lose_life()
+
+    session.confirm()
+
+    assert session.state is GameState.PLAYING
+    assert session.lives == LEVELS[0].lives - 1
+
+
 def test_losing_last_life_waits_for_confirm_then_returns_to_menu(session, audio):
     start(session)
     session.lives = 1
