@@ -4,7 +4,7 @@ import math
 import wave
 from array import array
 
-import pygame
+import pygame  # type: ignore[import-not-found]
 
 from glitch_runner.application.ports import Sound
 from glitch_runner.config import DEFAULT_MUSIC_VOLUME, DEFAULT_SFX_VOLUME
@@ -15,11 +15,11 @@ logger = logging.getLogger(__name__)
 SOUND_FILES: dict[Sound, tuple[str, ...]] = {
     Sound.JUMP: ("jump.wav", "jump-audio.mp3", "jump.mp3"),
     Sound.LAND: ("land.wav",),
-    Sound.GLITCH: ("glitch.wav",),
-    Sound.LEVEL_COMPLETE: ("level_complete.wav",),
+    Sound.GLITCH: ("glitch.wav", "glitch.mp3"),
+    Sound.LEVEL_COMPLETE: ("level_complete.wav", "level_complete.mp3"),
     Sound.GAME_OVER: ("pixel-explosion-319166.mp3", "game-over.mp3", "death.mp3", "death.wav"),
     Sound.FINAL_DEATH: ("pixel-death-66829.mp3", "final-death.mp3", "final-death.wav"),
-    Sound.GAME_COMPLETED: ("good-result-82807.mp3", "complete.mp3", "complete.wav"),
+    Sound.GAME_COMPLETED: ("good-result-82807.mp3", "complete.mp3", "complete.wav", "game_completed.mp3"),
 }
 
 PLACEHOLDER_SAMPLE_RATE = 44100
