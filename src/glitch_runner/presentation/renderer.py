@@ -29,8 +29,8 @@ LEVEL_COMPLETE_COLOR = (0, 255, 0)
 GAME_COMPLETED_COLOR = (0, 255, 255)
 
 MENU_LINES = (
-    "Navigate through glitchy levles to reach the exit portal",
-    "Watch out for enemys and random glitches!",
+    "Navigate through glitchy levels to reach the exit portal",
+    "Watch out for enemies and random glitches!",
     "",
     "Controls:",
     "Arrow Keys: Move",
