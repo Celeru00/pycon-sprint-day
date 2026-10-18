@@ -1,0 +1,63 @@
+Player Sprite Template Structure
+============================
+
+Each animation state should have 4 frames in a horizontal strip.
+Below is an ASCII representation of how each sprite sheet should be structured:
+
+idle_right.png (4 frames, 160x60 pixels):
++----------------+----------------+----------------+----------------+
+|                |                |                |                |
+|     Frame 1    |     Frame 2    |     Frame 3    |     Frame 4    |
+|   Standing     |  Slight bob    |  Neutral pose  |  Slight bob    |
+|                |                |                |                |
++----------------+----------------+----------------+----------------+
+
+run_right.png (4 frames, 160x60 pixels):
++----------------+----------------+----------------+----------------+
+|                |                |                |                |
+|     Frame 1    |     Frame 2    |     Frame 3    |     Frame 4    |
+|   Right leg    |  Both legs     |   Left leg     |  Both legs     |
+|   forward      |  mid-stride    |   forward      |  mid-stride    |
++----------------+----------------+----------------+----------------+
+
+jump_right.png (4 frames, 160x60 pixels):
++----------------+----------------+----------------+----------------+
+|                |                |                |                |
+|     Frame 1    |     Frame 2    |     Frame 3    |     Frame 4    |
+|   Jump prep    |  Early rise    |   Peak rise    |  Start fall    |
+|                |                |                |                |
++----------------+----------------+----------------+----------------+
+
+fall_right.png (4 frames, 160x60 pixels):
++----------------+----------------+----------------+----------------+
+|                |                |                |                |
+|     Frame 1    |     Frame 2    |     Frame 3    |     Frame 4    |
+|  Early fall    |  Mid fall      |   Fast fall    |  Pre-landing   |
+|                |                |                |                |
++----------------+----------------+----------------+----------------+
+
+wall_slide_right.png (4 frames, 160x60 pixels):
++----------------+----------------+----------------+----------------+
+|                |                |                |                |
+|     Frame 1    |     Frame 2    |     Frame 3    |     Frame 4    |
+|  Touch wall    |  Slide start   |   Mid slide    |  Slide cont.   |
+|                |                |                |                |
++----------------+----------------+----------------+----------------+
+
+Create mirrored versions of these for the left-facing animations.
+
+Character Design Elements:
+-------------------------
+- Head: Round or square with simple facial features
+- Body: Rectangular with slight taper
+- Arms: Simple lines or rectangles showing movement
+- Legs: Rectangles that change position for different poses
+- Glitch Effects: Add occasional pixel distortions or color shifts
+
+Color Palette Suggestion:
+------------------------
+- Main Body: #00FF00 (bright green)
+- Shading: #00CC00 (darker green)
+- Highlights: #80FF80 (light green)
+- Outlines: #008800 (dark green)
+- Glitch Effects: #FF00FF (magenta)

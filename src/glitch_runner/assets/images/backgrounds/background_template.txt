@@ -1,0 +1,87 @@
+Background Design Templates for Glitch Runner
+======================================
+
+Each level should have its own unique background that matches the theme and difficulty.
+Below are design specifications for each level background:
+
+Level 1 - "First Glitches" (level1_bg.png)
+-----------------------------------------
+Dimensions: 800x600 pixels
+Base Color: RGB(30, 30, 50) - Dark blue/purple
+
+Design Elements:
+- Simple grid pattern (20x20 pixel grid)
+- Subtle circuit-like lines running horizontally and vertically
+- A few scattered "glitch" pixels in random locations
+- Faint glow effect in the center of the screen
+- Low contrast to keep focus on gameplay elements
+
+Layer Structure:
+1. Base color background
+2. Grid pattern (10% opacity)
+3. Circuit lines (15% opacity)
+4. Glitch pixels (30% opacity)
+5. Center glow (20% opacity, radial gradient)
+
+Level 2 - "Glitch Intensifies" (level2_bg.png)
+--------------------------------------------
+Dimensions: 800x600 pixels
+Base Color: RGB(40, 20, 60) - Deep purple
+
+Design Elements:
+- Distorted grid pattern (wavy lines instead of straight)
+- Digital noise scattered throughout (like TV static)
+- Binary code sequences (0s and 1s) fading in and out
+- Occasional horizontal scan lines
+- Medium contrast with some brighter elements
+
+Layer Structure:
+1. Base color background
+2. Distorted grid (20% opacity)
+3. Digital noise pattern (15% opacity)
+4. Binary code elements (25% opacity)
+5. Scan lines (10% opacity, animated if possible)
+
+Level 3 - "Glitch Nightmare" (level3_bg.png)
+------------------------------------------
+Dimensions: 800x600 pixels
+Base Color: RGB(60, 10, 30) - Dark red/burgundy
+
+Design Elements:
+- Heavily corrupted grid pattern (broken and glitched)
+- Intense digital artifacts and distortion
+- Error message fragments and corrupted text
+- Glitch blocks and tears in the "digital fabric"
+- High contrast with bright flashes and dark areas
+
+Layer Structure:
+1. Base color background
+2. Corrupted grid (30% opacity)
+3. Digital artifacts (40% opacity)
+4. Error messages and text (35% opacity)
+5. Glitch blocks (50% opacity)
+6. Bright flash elements (25% opacity)
+
+Implementation Notes:
+-------------------
+To use these backgrounds in the game, you'll need to:
+
+1. Create the background images following these templates
+2. Modify the Level class to load the appropriate background image
+3. Draw the background before other game elements
+
+Example code for loading backgrounds:
+```python
+self.background = pygame.image.load(os.path.join('assets', 'images', 'backgrounds', f'level{level_num}_bg.png')).convert()
+```
+
+Example code for drawing backgrounds:
+```python
+def draw(self, screen):
+    # Draw background
+    screen.blit(self.background, (0, 0))
+    
+    # Draw other elements
+    self.platforms.draw(screen)
+    # etc...
+```
