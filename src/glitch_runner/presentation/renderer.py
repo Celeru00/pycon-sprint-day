@@ -198,4 +198,4 @@ class GameRenderer:
 
 
 def _music_status(session: GameSession) -> str:
-    return "ON" if session.music_muted else "MUTED"
+    return "MUTED" if session.music_muted else "ON"
