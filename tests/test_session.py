@@ -87,3 +87,11 @@ def test_commands_ignored_outside_play(session):
 def test_toggle_music(session):
     session.toggle_music()
     assert session.music_muted
+
+
+def test_falling_off_bottom_costs_life(session): #todo: this test is failing because the player is not being respawned after falling off the screen. The player should be respawned at the starting position of the level after losing a life.
+    start(session) #to start the game and set the state to PLAYING
+    session.player.rect.top = 1000 #to simulate the player falling off the screen and the 1000 is an arbitrary value that is greater than the screen height (SCREEN_HEIGHT = 600)
+    session.update(HeldKeys()) #to update the session and check if the player has fallen off the screen
+
+    assert session.state is GameState.GAME_OVER #to check if the game state is GAME_OVER after the player has fallen off the screen
