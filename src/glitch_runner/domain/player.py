@@ -210,6 +210,11 @@ class Player:
             if falling_in_air:
                 self.wall_sliding = True
                 self.facing_right = False
+        if self.rect.bottom > SCREEN_HEIGHT:
+            self.rect.bottom = SCREEN_HEIGHT
+            self.velocity_y = 0
+            self.on_ground = True
+            self.jump_count = 0
         if self.ceiling_enabled and self.rect.top < 0:
             self.rect.top = 0
             self.velocity_y = 0
